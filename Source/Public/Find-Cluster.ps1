@@ -3,7 +3,6 @@
     #>
     [CmdletBinding()]
     Param (
-        [Parameter(ValueFromPipeline=$true)]
         [string]$Name = "*",
 
         [string[]]$Exclude,
@@ -25,8 +24,10 @@
         {
             Continue
         }
+        $Cluster | Add-Member -MemberType NoteProperty -Name "PSTypeName" -Value "FailoverCluster.Name"
+
         Write-Output $Cluster
-        Count ++
+        $Count ++
     }
     Write-Verbose "Found $Count Windows Clusters"
 }

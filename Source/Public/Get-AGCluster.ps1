@@ -54,7 +54,6 @@ Function Get-AGCluster
     #requires -Version 3.0
 
     [CmdletBinding()]
-    [OutputType("SQL.AvailabilityGroup.Object")]
     Param (
         [Parameter(Mandatory=$true,
             Position=0)]
